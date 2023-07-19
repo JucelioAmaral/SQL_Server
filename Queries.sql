@@ -440,3 +440,42 @@ EXEC dbo.PersistirDadosEmCategorias @descricao='Categoria Procedure'-- Exibe men
 EXEC dbo.PersistirDadosEmCategorias @descricao= null
 SELECT * FROM  Categorias
 */
+
+
+
+
+--------  VIEW -------
+
+-- Examinando as tabela para criar a view
+/*SELECT * FROM  Cursos
+SELECT * FROM  Categorias*/
+
+
+--Criando uma VIEW
+/*CREATE VIEW vwCursos
+AS
+SELECT cu.descricao, ca.descricao Categoria
+FROM  Cursos cu 
+INNER JOIN Categorias ca
+ON cu.categoria_id = ca.id
+
+SELECT * FROM vwCursos
+SELECT * FROM vwCursos WHERE descricao = 'EF Core'
+*/
+
+
+--para apagar a view
+/*DROP VIEW vwCursos*/
+
+
+--Alterar a estrutura de uma view (mais a coluna cadastrado_em)
+/*ALTER VIEW vwCursos
+AS
+SELECT cu.descricao, ca.descricao Categoria, cu.cadastrado_em
+FROM  Cursos cu 
+INNER JOIN Categorias ca
+ON cu.categoria_id = ca.id 
+
+
+SELECT * FROM vwCursos
+*/
