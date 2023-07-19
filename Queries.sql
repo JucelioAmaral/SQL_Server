@@ -321,3 +321,40 @@ SELECT * FROM Categorias
 
 COMMIT
 */
+
+
+
+
+
+--------  FUNÇÕES -------
+
+-- left() > retorna os 4 primeiros caracteres de cada string
+/*SELECT left(descricao,4) descricao FROM Categorias*/
+
+-- right() > retorna os 4 último caracteres de cada string
+/*SELECT right(descricao,4) descricao FROM Categorias*/
+
+
+
+-- substring() > Retornar valores dentro de um intervalo. NO BANCO DE DADO O ÍNDICE COMEÇA PELO 1 E NÃO 0.
+/*SELECT substring(descricao,2,5), descricao FROM Categorias*/
+
+
+-- CONCATENAÇÃO > concatena strings
+/*SELECT 'Rafael' + 'Almeida' + NULL*/
+
+/*SELECT CONCAT('Rafael', ' Almeida', ' Santos')*/
+
+/*SELECT CONCAT( descricao, ' Teste') from Categorias*/
+
+
+-- ISNULL > Se encontrar NULL na celula, retorna o valor que descreveu do lado direito.
+/*SELECT ISNULL(descricao, 'SEM DESCRIÇÃO') FROM Categorias*/
+
+
+-- IIF > valida o que está antes da primeira virgula
+/*SELECT IIF( -1 > 0, 'MAIOR QUE ZERO','MENOR QUE ZERO')*/
+
+/*SELECT descricao, IIF(LEN(descricao) > 5, 'MAIOR QUE 5','MENOR QUE 5') FROM Categorias*/
+
+/*SELECT CAST(GETDATE() AS DATE), CAST(GETDATE() AS TIME)*/
