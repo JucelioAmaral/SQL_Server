@@ -358,3 +358,44 @@ COMMIT
 /*SELECT descricao, IIF(LEN(descricao) > 5, 'MAIOR QUE 5','MENOR QUE 5') FROM Categorias*/
 
 /*SELECT CAST(GETDATE() AS DATE), CAST(GETDATE() AS TIME)*/
+
+
+
+-------- CRIANDO FUNÇÕES -------
+
+-- retorna um varchar
+/*CREATE FUNCTION Mascarar(@data VARCHAR(255), @quantidadeCaracteres int)
+RETURNS VARCHAR(255)
+AS
+BEGIN
+	RETURN LEFT (@data,@quantidadeCaracteres) + '**** ****'
+END
+
+SELECT dbo.Mascarar('Rafael Almeida',4)
+SELECT dbo.Mascarar(descricao, 4) FROM Categorias
+*/
+
+
+
+/*--nova função - Retorna valor inteiro
+CREATE FUNCTION ContarRegistros()
+RETURNS INT
+AS
+BEGIN
+	RETURN ( SELECT COUNT(*) FROM Categorias)
+END
+
+SELECT dbo.ContarRegistros()
+*/
+
+
+
+--nova função - Retorna tabela (registro completo da tabela)
+/*CREATE FUNCTION GetCategoriaById(@id int)
+RETURNS TABLE
+AS
+RETURN ( SELECT * FROM Categorias WHERE id = @id)
+
+SELECT * FROM dbo.GetCategoriaById(1)
+SELECT * FROM dbo.GetCategoriaById(2)
+*/
