@@ -216,3 +216,41 @@ HAVING COUNT(*) < 2*/
 
 -- Operador BETWEEN
 /*SELECT * FROM Alunos WHERE id BETWEEN 2 AND 4*/
+
+
+
+--------  JOIN -------
+
+-- INNER JOIN
+/*SELECT * FROM Categorias
+SELECT * FROM Cursos*/
+
+/*SELECT * FROM  Cursos cr
+INNER JOIN Categorias ca ON ca.id = cr.categoria_id*/
+
+/*SELECT cu.descricao Curso, ca.descricao Categoria
+FROM  Cursos cu
+INNER JOIN Categorias ca ON ca.id = cu.categoria_id*/
+
+
+
+-- LEFT JOIN > Dá prioridade aos registros da tabela que está a esquerda do comando LEFT
+/*INSERT INTO Categorias(descricao)VALUES('Categoria test')*/ -- inserido para testar o LEFT JOIN
+/*SELECT ca.descricao Categoria, cu.descricao Curso
+FROM  Categorias  ca
+LEFT JOIN Cursos cu ON cu.categoria_id = ca.id*/ 
+
+
+
+-- RIGHT JOIN > Dá prioridade aos registros da tabela que está a direito do comando RIGHT
+/*SELECT cu.descricao Curso, ca.descricao Categoria
+FROM  Cursos cu
+RIGHT JOIN Categorias ca ON ca.id = cu.categoria_id*/
+
+
+
+-- FULL JOIN > Junção do LEFT JOIN e RIGHT JOIN
+/*SELECT cu.descricao Curso, ca.descricao Categoria
+FROM  Cursos cu
+FULL JOIN Categorias ca ON ca.id = (cu.categoria_id + 4)-- Somado 4 para simular o erro do id + 4, ou seja, não existirá esses ids.
+*/
