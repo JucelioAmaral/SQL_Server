@@ -514,3 +514,12 @@ INSERT INTO TabelaTeste(descricao) VALUES ('Teste 2')
 
 SELECT * FROM TabelaTeste
 */
+
+
+
+--------  ADICIONANDO NOVO CAMPO NUMA TABELA -------
+
+/*ALTER TABLE Categorias ADD Teste VARCHAR (100) DEFAULT 'Teste'
+
+SELECT * FROM Categorias
+*/
