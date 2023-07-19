@@ -583,3 +583,31 @@ RESTORE DATABASE DBDesenvolvedorIO
 FROM DISK = 'D:/CURSOS E FORMAÇÕES Desenvolvedor.io/SQL para Desenvolvedores/BANCO DE DADOS/AulaBackup.bak'
 WITH REPLACE
 */
+
+
+
+
+-------- TIPS & TRICKS --------
+--DICAS E TRUQUES
+
+
+--> Usar o SQL Server Profiler
+
+-- SELECT * FROM Categorias
+
+
+
+-->> HINTS SQL
+--Recurso que possibilita anotações
+
+/*SELECT * FROM Categorias
+
+BEGIN TRANSACTION
+UPDATE Categorias SET descricao = 'Teste com NOLOCK ' WHERE  id=2004
+
+
+ROLLBACK
+
+--Use este comando abaixo em outra seção/aba, assim conseguir ver o registro modificado
+SELECT * FROM Categorias WITH (NOLOCK)
+*/
