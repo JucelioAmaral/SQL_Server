@@ -283,3 +283,18 @@ SELECT 'Valor dinamico'*/
 
 
 
+--------  TRANSAÇÕES -------
+
+/*SELECT * FROM Categorias
+
+BEGIN TRANSACTION
+UPDATE Categorias SET descricao = UPPER(descricao) WHERE id>0
+GO
+DELETE Categorias WHERE id = 1002
+GO
+
+/*ROLLBACK*/
+
+/*COMMIT*/
+
+*/
