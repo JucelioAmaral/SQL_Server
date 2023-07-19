@@ -534,3 +534,21 @@ ALTER TABLE Categorias DROP CONSTRAINT DF__Categoria__Teste__4E88ABD4; -- Ao cri
 
 SELECT * FROM Categorias
 */
+
+
+
+--------  RENOMEANDO NOMES DE COLUNAS E TABELA -------
+/*
+ALTER TABLE Categorias ADD Teste VARCHAR (100)
+
+SELECT * FROM Categorias
+
+--Comando para alterar o nome da coluna
+EXECUTE sp_rename 'dbo.Categorias.Teste','Observacao','COLUMN'
+
+SELECT * FROM Categorias
+
+
+--Comando para alterar o nome de uma tabela
+EXECUTE sp_rename 'dbo.TabelaTeste','TabelaAlterada'
+*/
