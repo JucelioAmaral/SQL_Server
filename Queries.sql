@@ -523,3 +523,14 @@ SELECT * FROM TabelaTeste
 
 SELECT * FROM Categorias
 */
+
+
+
+
+--------  REMOVENDO COLUNAS DE UMA TABELA -------
+
+/*ALTER TABLE Categorias DROP COLUMN Teste;
+ALTER TABLE Categorias DROP CONSTRAINT DF__Categoria__Teste__4E88ABD4; -- Ao criar com o "DEFAULT" foi gerado uma CONSTRAINT. Para apagar basta executar este comando passando o registro (DF__Categoria__Teste__4E88ABD4) apresentado ao executar o DROP COLUMN acima.
+
+SELECT * FROM Categorias
+*/
