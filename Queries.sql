@@ -181,3 +181,38 @@ FETCH FIRST 2 ROWS ONLY;*/
 /*SELECT * FROM Alunos WHERE Nome LIKE '%o'*/  -- Consulta pelos caracteres finais
 /*SELECT * FROM Alunos WHERE Nome LIKE '%u%'*/  -- Consulta pelos caracteres no meio
 /*SELECT * FROM Alunos WHERE Nome LIKE 'R%l'*/  -- Consulta pelos caracteres que inicia e finaliza com tais caracteres
+
+
+
+
+-- MAX/ MIN
+/*SELECT MAX(id) FROM Alunos*/
+/*SELECT MIN(id) FROM Alunos*/
+/*SELECT * FROM Alunos WHERE id = (SELECT MAX(id) FROM Alunos)*/
+
+
+-- COUNT / SUM
+/*SELECT * FROM Cursos*/
+/*SELECT COUNT(*), SUM(total_horas), SUM(valor) FROM Cursos*/
+
+
+
+-- GROUP BY
+/*SELECT cidade, estado, COUNT(*) FROM Alunos GROUP BY cidade, estado*/
+
+
+-- HAVING 
+/*SELECT cidade, estado, COUNT(*)Total FROM Alunos
+GROUP BY cidade, estado
+HAVING COUNT(*) < 2*/
+
+
+
+-- Operador IN
+/*SELECT * FROM Alunos WHERE id IN (2,4)*/
+/*SELECT * FROM Alunos WHERE id IN (SELECT id FROM Alunos)*/
+
+
+
+-- Operador BETWEEN
+/*SELECT * FROM Alunos WHERE id BETWEEN 2 AND 4*/
