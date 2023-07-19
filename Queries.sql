@@ -254,3 +254,32 @@ RIGHT JOIN Categorias ca ON ca.id = cu.categoria_id*/
 FROM  Cursos cu
 FULL JOIN Categorias ca ON ca.id = (cu.categoria_id + 4)-- Somado 4 para simular o erro do id + 4, ou seja, não existirá esses ids.
 */
+
+
+
+-------- UNION & UNION ALL -------
+
+/*SELECT * FROM Cursos WHERE id = 1
+UNION
+SELECT * FROM Cursos WHERE id = 2*/
+
+
+-- UNION > Faz a distinção, elimina a duplicida
+/*SELECT descricao FROM Cursos WHERE id = 1
+UNION
+SELECT descricao FROM Categorias WHERE id = 2
+UNION
+SELECT 'Valor dinamico'*/
+
+
+-- UNION ALL > Mostra tudo, não faz a distinção, não elimina a duplicida.
+/*SELECT descricao FROM Cursos WHERE id = 1
+UNION ALL
+SELECT descricao FROM Categorias WHERE id = 2
+UNION ALL
+SELECT 'Valor dinamico'
+UNION ALL
+SELECT 'Valor dinamico'*/
+
+
+
