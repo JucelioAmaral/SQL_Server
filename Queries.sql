@@ -479,3 +479,38 @@ ON cu.categoria_id = ca.id
 
 SELECT * FROM vwCursos
 */
+
+
+
+
+--------  SEQUÊNCIA -------
+
+--Criando uma sequencia
+/*CREATE SEQUENCE MinhaSequencia
+AS INT
+START WITH 6 --exemplo
+INCREMENT BY 1 --incrementa de 1 em 1
+MINVALUE 6 -- Minimo de valores
+MAXVALUE 1000 -- Máximo de valores
+NO CYCLE -- sem ciclo
+
+
+SELECT NEXT VALUE FOR MinhaSequencia
+-- out= 6
+SELECT NEXT VALUE FOR MinhaSequencia
+-- out= 7
+*/
+
+
+--EXEMPLO criando uma tabela e populando
+/*CREATE TABLE TabelaTeste
+(
+	id int DEFAULT NEXT VALUE FOR MinhaSequencia,
+	descricao VARCHAR (20)
+)
+
+INSERT INTO TabelaTeste(descricao) VALUES ('Teste 1')
+INSERT INTO TabelaTeste(descricao) VALUES ('Teste 2')
+
+SELECT * FROM TabelaTeste
+*/
