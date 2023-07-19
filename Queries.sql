@@ -399,3 +399,44 @@ RETURN ( SELECT * FROM Categorias WHERE id = @id)
 SELECT * FROM dbo.GetCategoriaById(1)
 SELECT * FROM dbo.GetCategoriaById(2)
 */
+
+
+
+
+
+--------  PROCEDURE -------
+
+/*
+CREATE PROCEDURE PesquisarCategoriaPorId(@id int)
+AS
+BEGIN 
+	SELECT * FROM  Categorias WHERE id = @id
+END
+
+
+-- Comando para executar um "select" é usar o EXEC ou EXECUTE.
+EXECUTE dbo.PesquisarCategoriaPorId 1
+EXECUTE dbo.PesquisarCategoriaPorId @id = 1
+EXECUTE dbo.PesquisarCategoriaPorId @id = 2
+*/
+
+
+
+
+-- Podemos também persistir dados
+/*CREATE PROCEDURE PersistirDadosEmCategorias(@descricao VARCHAR(255))
+AS
+BEGIN 
+	IF(@descricao IS NULL)
+	BEGIN 
+		RAISERROR('Descrição não é valida', 16,1) -- 16 e 1 são severidades do SQL server, state error
+		RETURN
+	END
+	INSERT INTO Categorias(descricao, cadastrado_em) VALUES (@descricao, GETDATE())
+END
+
+
+EXEC dbo.PersistirDadosEmCategorias @descricao='Categoria Procedure'-- Exibe mensagem "Descrição não é valida"
+EXEC dbo.PersistirDadosEmCategorias @descricao= null
+SELECT * FROM  Categorias
+*/
