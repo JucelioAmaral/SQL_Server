@@ -298,3 +298,26 @@ GO
 /*COMMIT*/
 
 */
+
+
+--------  SAVE POINT -------
+-- Utiliza pontos de marcação para salvação e pode fazer rollback a partir do ponto de marcação dentro da Transação.
+/*
+SELECT * FROM Categorias
+
+BEGIN TRANSACTION
+INSERT INTO Categorias (descricao, cadastrado_em) VALUES('Categoria Nova 1', GETDATE());
+INSERT INTO Categorias (descricao, cadastrado_em) VALUES('Categoria Nova 2', GETDATE());
+GO
+SAVE TRANSACTION AtualizacaoPoint
+UPDATE Categorias SET descricao = 'Aplicacao WEB' WHERE descricao = 'WEB'
+GO
+
+SELECT * FROM Categorias
+
+ROLLBACK TRANSACTION AtualizacaoPoint
+
+SELECT * FROM Categorias
+
+COMMIT
+*/
