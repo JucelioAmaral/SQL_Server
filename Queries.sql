@@ -552,3 +552,34 @@ SELECT * FROM Categorias
 --Comando para alterar o nome de uma tabela
 EXECUTE sp_rename 'dbo.TabelaTeste','TabelaAlterada'
 */
+
+
+
+-------- BACKUP --------
+
+-- Gerando backups de banco de dados. BACKUP FULL
+/*BACKUP DATABASE DBDesenvolvedorIO
+TO DISK = 'D:/CURSOS E FORMAÇÕES Desenvolvedor.io/SQL para Desenvolvedores/BANCO DE DADOS/AulaBackup.bak'
+WITH INIT,
+	NAME = 'Backup do banco de dados'
+*/
+
+-- Gerando backups de banco de dados. BACKUP DIFERENCIADO
+/*BACKUP DATABASE DBDesenvolvedorIO
+TO DISK = 'D:/CURSOS E FORMAÇÕES Desenvolvedor.io/SQL para Desenvolvedores/BANCO DE DADOS/AulaBackup-01.bak'
+WITH DIFFERENTIAL,
+	NAME = 'Backup do banco de dados - Diferencial'
+*/
+
+
+
+-->> RESTAURANDO BACKUP ---
+
+-- Deve-se usar outro banco (master) para conseguir restaurar o que queremos.
+/*use master
+go
+
+RESTORE DATABASE DBDesenvolvedorIO
+FROM DISK = 'D:/CURSOS E FORMAÇÕES Desenvolvedor.io/SQL para Desenvolvedores/BANCO DE DADOS/AulaBackup.bak'
+WITH REPLACE
+*/
