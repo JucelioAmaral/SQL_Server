@@ -3,6 +3,8 @@
 use DBDesenvolvedorIO
 go
 
+------------------------ COMANDOS DDL e DML----------------------------
+
 -- DROP DATABASE DBDesenvolvedorIO
 
 
@@ -59,7 +61,7 @@ UPDATE ALUNOS SET data_nascimento = GETDATE() , ativo = 1;
 DELETE TOP(2) FROM ALUNOS;
 */
 
-----------------------------------------------------
+
 /*-- Criando tabela novamente, porem diferente.
 CREATE TABLE Alunos(
 id int PRIMARY KEY IDENTITY,
@@ -133,3 +135,49 @@ CONSTRAINT fk_cursos_id FOREIGN KEY (curso_id) REFERENCES Cursos (id)
 (5,1),
 (5,2),
 (5,3);*/
+
+
+
+
+------------------------ COMANDOS ----------------------------
+-- DISTINCT
+/*SELECT DISTINCT cidade, estado FROM Alunos*/
+
+
+
+-- ORDER BY
+/*SELECT * FROM Alunos
+ORDER BY nome*/
+
+
+
+-- TOP
+/*SELECT TOP 4 * FROM Alunos ORDER BY id;*/
+
+
+-- PERCENT
+/*SELECT TOP 10 PERCENT * FROM Alunos ORDER BY id;*/
+
+
+--OFFSET / FETCH> Paginação ou limitação da quantidaded de retorno da tabela
+/*SELECT * FROM Alunos ORDER BY id
+OFFSET 2 ROWS
+FETCH FIRST 2 ROWS ONLY;*/
+
+
+--WHERE
+/*SELECT * FROM Alunos WHERE nome = 'Rafael'*/
+/*SELECT * FROM Alunos WHERE id >= 3*/
+
+
+--AND/OR
+/*SELECT * FROM Alunos WHERE id >= 3 AND Nome = 'Bruno'*/
+/*SELECT * FROM Alunos WHERE id >= 3 AND (Nome = 'Bruno' OR Nome = 'Heloysa')*/
+
+
+-- LIKE
+/*SELECT * FROM Alunos WHERE Nome LIKE 'Rafael'*/
+/*SELECT * FROM Alunos WHERE Nome LIKE 'Ra%'*/  -- Consulta pelos caracteres iniciais
+/*SELECT * FROM Alunos WHERE Nome LIKE '%o'*/  -- Consulta pelos caracteres finais
+/*SELECT * FROM Alunos WHERE Nome LIKE '%u%'*/  -- Consulta pelos caracteres no meio
+/*SELECT * FROM Alunos WHERE Nome LIKE 'R%l'*/  -- Consulta pelos caracteres que inicia e finaliza com tais caracteres
